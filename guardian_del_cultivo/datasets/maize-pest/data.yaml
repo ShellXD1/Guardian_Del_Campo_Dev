@@ -1,0 +1,14 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 4
+names: ['gusano_cogollero', 'gusano_gris', 'gusano_verde', 'trips']
+
+
+roboflow:
+  workspace: 526
+  project: maize-pest
+  version: 4
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/526/maize-pest/dataset/4
