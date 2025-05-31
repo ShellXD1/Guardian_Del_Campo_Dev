@@ -26,7 +26,7 @@ class CameraService {
 
   // Método para enviar imagen al backend
   Future<String?> enviarImagenAlBackend(File imagen) async {
-    final uri = Uri.parse('http://192.168.1.142:5000/predict'); // Asegúrate de usar tu IP local
+    final uri = Uri.parse('http://192.168.1.142:5000/predict');
 
     var request = http.MultipartRequest('POST', uri);
     request.files.add(await http.MultipartFile.fromPath('image', imagen.path));
@@ -37,7 +37,7 @@ class CameraService {
 
       if (respuesta.statusCode == 200) {
         final data = jsonDecode(respuesta.body);
-        return data['resultado']; // Asegúrate que tu backend devuelve "resultado"
+        return data['resultado']; 
       } else {
         print('Error en el backend: ${respuesta.statusCode}');
         return null;
